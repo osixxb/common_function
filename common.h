@@ -1,3 +1,4 @@
+
 #ifndef _COMMON_H_
 #define _COMMON_H_
 
@@ -198,11 +199,38 @@ long bsnumStat(long island,struct bstpstr **bstpData);
 int osi_date_hour(time_t simtime);
 void bstp_island(struct linestr  ** lineData,struct bstpstr  ** bstpData,long bstpNum);
 void update(struct bstpstr **bstpData,long *tmplist,long n,long island,long bstpNum,struct linestr **lineData);
+//************************************
+// Description:  read 
+// Returns:  	 OSI_RECORD
+// Parameter:	 char * argv
+//************************************
 int input_path();
 int getProgramName(char **last_name_str,char *ori_name_str);
 void initqstr(char *qstr,char *string);
 void initstr(char *string);
 void strcut(char *string,long n);
+
+//************************************
+// Description:  strsegDqm
+// Returns:  	 void
+// Parameter:	 char * seg
+// Parameter:	 char * string
+// Parameter:	 long k
+//************************************
 void strsegDqm(char *seg,char *string,long k);
+
+//************************************
+// Description:  ´Ó×Ö·û´®p1¸´ÖÆm¸ö×Ö·ûµ½×Ö·û´®p2
+// Returns:  	 void
+// Parameter:	 char * p1
+// Parameter:	 char * p2
+// Parameter:	 int m
+//************************************
 void copystr(char *p1,char *p2,int m);
+
+/*************************************************** 
+get rand value from x to y	
+***************************************************/
+long get_rand(long x,long y);
+
 #endif

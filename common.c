@@ -1,3 +1,4 @@
+
 #include "common.h"
 
 #pragma warning(disable:4996)
@@ -98,6 +99,16 @@ int processCommandLine( int argc, char** argv )
 
 	return TRUE;
 }
+/****************************************************************/
+/* get rand value from x to y	*/
+/****************************************************************/
+long get_rand(long x,long y)
+{
+	srand((unsigned)time(NULL));
+	
+	return x+rand()%(y-x+1);
+}
+
 //************************************
 // Description:  read 
 // Returns:  	 OSI_RECORD
