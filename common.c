@@ -84,7 +84,7 @@ int processCommandLine( int argc, char** argv )
 				break;
 
 			case 'p':
-				if(input_path(argv[++argIdx]) == FAIL)	//Ğè++argindx£¬²»ÄÜargidx+1£» »òÕßosi_string_copy
+				if(input_path(argv[++argIdx]) == FAIL)	//éœ€++argindxï¼Œä¸èƒ½argidx+1ï¼› æˆ–è€…osi_string_copy
 					//usage(argv[0]);
 				//osi_string_copy(xmlpath,argv[++argIdx],sizeof(xmlpath);
 				break;
@@ -163,7 +163,8 @@ extern int posdata(FILE *fp,char *data)
 		if(strstr(buffer,data)) return 1;
 	}
 
-	return 0;
+	return 0; 
+	printf("Success");
 }
 
 
@@ -282,7 +283,7 @@ long getdate_mth(char *date_str)
 }
 
 //************************************
-// Description:  ¶ÁÈ¡Ë«ÒıºÅÖ®¼äµÄ×Ö·û´®
+// Description:  è¯»å–åŒå¼•å·ä¹‹é—´çš„å­—ç¬¦ä¸²
 // Returns:  	 long
 // Parameter:	 char * dqm
 //************************************
@@ -300,7 +301,7 @@ long getdate_day(char *date_str)
 	return 0;
 }
 //************************************
-// Description:  ´Ó×Ö·û´®p1¸´ÖÆm¸ö×Ö·ûµ½×Ö·û´®p2
+// Description:  ä»å­—ç¬¦ä¸²p1å¤åˆ¶mä¸ªå­—ç¬¦åˆ°å­—ç¬¦ä¸²p2
 // Returns:  	 void
 // Parameter:	 char * p1
 // Parameter:	 char * p2
@@ -335,7 +336,7 @@ int getProgramName(char **last_name_str,char *ori_name_str)
 	char buff[1000];
 	char *name;
 	strcpy(buff,ori_name_str);
-	name=strrchr(buff,0x5C); //²éÕÒ×îºóÒ»¸ö"\"ºóÃæµÄ×Ö·û(°üÀ¨"\"ÔÚÄÚ)£¬Ö¸ÕënameÖ¸Ïò"\....", 0x5C == "\"
+	name=strrchr(buff,0x5C); //æŸ¥æ‰¾æœ€åä¸€ä¸ª"\"åé¢çš„å­—ç¬¦(åŒ…æ‹¬"\"åœ¨å†…)ï¼ŒæŒ‡é’ˆnameæŒ‡å‘"\....", 0x5C == "\"
 	*last_name_str = strtok(name,seps_date);
 	if(last_name_str != NULL)
 		return TRUE;
@@ -796,7 +797,7 @@ void strsegSpace(char *seg,char *string,long k)
 }
 
 //************************************
-// Description:  ÒÔË«ÒıºÅ×÷Îª·Ö¸ô·û
+// Description:  ä»¥åŒå¼•å·ä½œä¸ºåˆ†éš”ç¬¦
 // Returns:  	 void
 // Parameter:	 char * seg
 // Parameter:	 char * string
